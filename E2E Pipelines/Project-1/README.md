@@ -1,0 +1,1 @@
+The complete Jenkins pipeline project Steps and related scripts are available on my Dev.to blog. Check it out here: https://dev.to/venkyy8

@@ -1,0 +1,64 @@
+pipeline {
+    agent any
+
+    parameters {
+        // Choice parameter: User can select from predefined options
+        choice(name: 'DEPLOY_ENV', choices: ['Development', 'Staging', 'Production'], description: 'Select the environment to deploy to')
+
+        // Boolean parameter: Toggle between true/false
+        booleanParam(name: 'IS_PRODUCTION', defaultValue: false, description: 'Is this production deployment?')
+
+        // String parameter: Let the user provide custom input
+        string(name: 'CUSTOM_MESSAGE', defaultValue: 'Hello, Jenkins!', description: 'Enter a custom message')
+    }
+
+    stages {
+        stage('Preparation') {
+            steps {
+                script {
+                    // Print the parameters to the console
+                    echo "Deploying to environment: ${params.DEPLOY_ENV}"
+                    echo "Is this a production deployment? ${params.IS_PRODUCTION}"
+                    echo "Custom Message: ${params.CUSTOM_MESSAGE}"
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    // Simulate build process
+                    echo "Building project..."
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    if (params.IS_PRODUCTION) {
+                        echo "Deploying to production..."
+                    } else {
+                        echo "Deploying to ${params.DEPLOY_ENV} environment..."
+                    }
+                }
+            }
+        }
+
+        stage('Notify') {
+            steps {
+                script {
+                    // Send notification or display message
+                    echo "Notification: ${params.CUSTOM_MESSAGE}"
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean-up tasks, e.g., notify, delete temporary files, etc.
+            echo "Pipeline execution complete."
+        }
+    }
+}
