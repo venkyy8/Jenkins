@@ -1,1 +1,1 @@
-![a](../images/parameters)
+![a](../images/parameters.png)

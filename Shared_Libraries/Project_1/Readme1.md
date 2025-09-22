@@ -34,7 +34,7 @@ Save your configuration.
 
 
 
-![A](../../images/sharedLibrary_setup)
+![A](../../images/sharedLibrary_setup.png)
 
 ---
 
@@ -64,7 +64,7 @@ def call(String name) {
 
 we can see the jenkins console output:
 
-![A](../../images/sharedLibrary_output)
+![A](../../images/sharedLibrary_output.png)
 ---
 
 ## Troubleshooting

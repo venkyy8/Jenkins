@@ -20,7 +20,7 @@ This guide demonstrates how to restore Jenkins from a backup stored on **Amazon 
 
 You can restore **all Jenkins configurations** or **only the Jenkins jobs** if you prefer not to overwrite the entire Jenkins setup.
 
-![A](../images/S3_Backups)
+![A](../images/S3_Backups.png)
 ---
 
 ## Prerequisites
